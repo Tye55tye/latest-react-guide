@@ -19,6 +19,6 @@ const saveExpenseDataHandler = (enteredExpenseData) => {
         </div>
     );
 
-}
+};
 
 export default NewExpense;

@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import Expenses from './components/Expenses/Expenses';
 import NewExpense from './components/Expenses/NewExpense/NewExpense';
 
-const DUMMy_EXPENSES = [
+const DUMMY_EXPENSES = [
   {
     id: 'jdj120',
     title: 'Car Insurance',
@@ -32,17 +32,17 @@ const DUMMy_EXPENSES = [
 
 const App = () => {
 
-  const [expenses, setExpenses] = useState(DUMMy_EXPENSES);
+  const [expenses, setExpenses] = useState(DUMMY_EXPENSES);
 
-  const addExpenseHandler = expense => {
+  
+  const addExpenseHandler = (expense) => {
     setExpenses((prevExpenses) => {
       return [expense, ...prevExpenses];
     });
+      
   };
-
+ 
   return (
-
-
 
     <div>
       <NewExpense onAddExpense={addExpenseHandler} />
