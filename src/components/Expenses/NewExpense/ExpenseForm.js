@@ -19,9 +19,7 @@ const ExpenseForm = (props) => {
     };
 
     const dateChangeHandler = (event) => {
-        console.log(event.target.value)
         setEnteredDate(event.target.value);
-    
     };
 
     const submitHandler = (event) => {
@@ -30,7 +28,7 @@ const ExpenseForm = (props) => {
         const expenseData = {
             title: enteredTitle,
             amount: enteredAmount,
-            date: new Date(enteredDate)
+            date: new Date(enteredDate),
         };
         
         props.onSaveExpenseData(expenseData)
@@ -38,6 +36,7 @@ const ExpenseForm = (props) => {
         setEnteredAmount('');
         setEnteredDate('');
     }
+    
 
     return (
         <form onSubmit={submitHandler}>
@@ -57,6 +56,7 @@ const ExpenseForm = (props) => {
                         step="0.01" 
                         value={enteredAmount}
                         onChange={amountChangeHandler} />
+                        
                 </div>
                 <div className="new-expense__control">
                     <label>Date</label>
